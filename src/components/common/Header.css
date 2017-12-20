@@ -1,3 +1,18 @@
-.FormControl{
-    width: 500
+.navbar-inverse {
+    background-color: rgb(138, 138, 138);
+    border-color: rgb(138, 138, 138);
+}
+
+.headerMain{
+    font-size: 30px;
+    font-weight: bold;
+}
+
+.formSearch{
+    width: 500px;
+}
+
+.headerItem{
+    font-size: 19px;
+    
 }
