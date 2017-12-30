@@ -1,0 +1,18 @@
+.navbar-inverse {
+    background-color: rgb(138, 138, 138);
+    border-color: rgb(138, 138, 138);
+}
+
+.headerMain{
+    font-size: 30px;
+    font-weight: bold;
+}
+
+.formSearch{
+    width: 500px;
+}
+
+.navItem{
+    color: white
+    
+}
