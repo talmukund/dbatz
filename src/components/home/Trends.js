@@ -7,7 +7,7 @@ const style = {
   backgroundcolor: "white",
   marginLeft: "30px",
   float: "left"
-}
+};
 
 class Trends extends React.Component {
   render() {

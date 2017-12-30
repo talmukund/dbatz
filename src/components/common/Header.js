@@ -13,7 +13,7 @@ import {
 } from "react-bootstrap";
 import "./Header.css";
 import { hashHistory } from "react-router";
-import AddQuestion from "../home/AddQuestion";
+import AddQuestion from "./AddQuestion";
 class Header extends React.Component {
   constructor(props) {
     super(props);
@@ -36,8 +36,8 @@ class Header extends React.Component {
   }
   render() {
     return (
-      <div>
-        <Navbar inverse staticTop>
+      <div >
+        <Navbar inverse fixedTop >
           <Navbar.Header>
             <Navbar.Brand>
               <a className="headerMain" href="#">

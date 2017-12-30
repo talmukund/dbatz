@@ -1,18 +1,14 @@
 // This component handles the App template used on every page.
-import React, {PropTypes} from 'react';
-import Header from './common/Header';
-import AddQuestion from "./home/AddQuestion";
+import React, { PropTypes } from "react";
+import Header from "./common/Header";
 
 class App extends React.Component {
   render() {
     return (
-      <div >
+      <div>
         <Header />
-        <div>
-        {this.props.children} 
-        </div> 
-        <AddQuestion/>      
-        </div>
+        <div style={{marginTop:"80px"}}>{this.props.children}</div>
+      </div>
     );
   }
 }

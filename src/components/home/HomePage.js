@@ -1,6 +1,9 @@
-import React from 'react';
+import React, {PropTypes} from 'react';
 import Trends from "./Trends";
 import {Panel, ListGroup, ListGroupItem, Tabs, Tab } from 'react-bootstrap';
+import {connect} from 'react-redux';
+import {bindActionCreators} from 'redux';
+import {loadQuestion} from "../../action/questionAction";
 
 const style = {  
   width: "50%",
@@ -13,6 +16,10 @@ const itemStyle = {
   height:"200px"
 };
 class HomePage extends React.Component {
+  constructor(props) {
+    super(props);
+  }
+  
   render() {
     return( 
     <span>
@@ -26,14 +33,10 @@ class HomePage extends React.Component {
                   Tab 1 content
                 </Tab>
                 <Tab eventKey={2} title="Tab 2">
-                Tab 2 contentTab 2 contentTab 2 contentTab 2 contentTab 2 contentTab 2 contentTab 2 contentTab 2 contentTab 2 contentTab 2 contentTab 2 contentTab 2 contentTab 2 contentTab 2 contentTab 2 contentTab 2 contentTab 2 contentTab 2 contentTab 2 contentTab 2 contentTab 2 contentTab 2 contentTab 2 contentTab 2 contentTab 2 contentTab 2 contentTab 2 contentTab 2 contentTab 2 contentTab 2 contentTab 2 contentTab 2 contentTab 2 contentTab 2 contentTab 2 contentTab 2 contentTab 2 contentTab 2 contentTab 2 contentTab 2 contentTab 2 contentTab 2 contentTab 2 contentTab 2 contentTab 2 contentTab 2 contentTab 2 contentTab 2 contentTab 2 contentTab 2 contentTab 2 contentTab 2 contentTab 2 contentTab 2 contentTab 2 content
+                {this.props.state}
                 </Tab>                
               </Tabs>
-            </ListGroupItem>
-            <ListGroupItem style={itemStyle}>Item 2</ListGroupItem>
-            <ListGroupItem style={itemStyle}>Item 2</ListGroupItem>
-            <ListGroupItem style={itemStyle}>Item 2</ListGroupItem>
-            <ListGroupItem style={itemStyle}>Item 2</ListGroupItem>
+            </ListGroupItem>            
           </ListGroup>
           Some more panel content here.
         </Panel>
@@ -43,4 +46,4 @@ class HomePage extends React.Component {
   }
 }
 
-export default HomePage;
+export default connect()( HomePage);
