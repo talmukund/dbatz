@@ -10,11 +10,14 @@ const style = {
 };
 
 class Trends extends React.Component {
+  constructor(props) {
+    super(props);
+  }
   render() {
     return (
       <div style={style}>
-      <Panel header="Twitter trends" style ={{height: "400px"}} >
-      trends
+      <Panel header={this.props.title} style ={{height: this.props.height}} >
+      "contents"
     </Panel>  
     </div>
     );

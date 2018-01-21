@@ -33,12 +33,27 @@ class AddQuestion extends Component {
   }
 
   handleChange(event){
-    const name = event.target.value;
+    const question = this.state.question;
+    switch(event.target.name){
+        case "title":
+         question.title = event.target.value;
+         break;
+         case "tab1":
+         question.tab1 = event.target.value;
+         break;
+         case "tab2":
+         question.tab2 = event.target.value;
+         break;
+         default:
+         question.title = ""
+         break;
 
-    this.setState({question:name});
+    }
+    this.setState({question:question});
   }
-  handleClose(event) {
-   this.props.dispatch(loadQuestion(this.state))
+  handleClose() {
+   this.props.dispatch(loadQuestion(this.state.question));
+   this.props.handleClose();
   }
   render() {
     return (
@@ -53,14 +68,14 @@ class AddQuestion extends Component {
                 Question
               </Col>
               <Col sm={10}>
-                <FormControl onChange={this.handleChange}/>
+                <FormControl name = "title" placeholder="Title" onChange={this.handleChange}/>
               </Col>
             </FormGroup>
 
             <FormGroup >
               <Col sm={2} componentClass={ControlLabel}>Tab1</Col>
               <Col componentClass={ControlLabel} sm={10}>
-                <FormControl onChange={this.handleChange}/>
+                <FormControl name = "tab1" placeholder="Tab1" onChange={this.handleChange}/>
               </Col>
             </FormGroup> 
 
@@ -74,7 +89,7 @@ class AddQuestion extends Component {
         </Modal.Body>
         <Modal.Footer>
           <Button onClick={this.props.handleClose}>Close</Button>
-          <Button bsStyle="primary" onClick={this.props.handleClose}>
+          <Button bsStyle="primary" onClick={this.handleClose}>
             Save changes
           </Button>
         </Modal.Footer>
@@ -86,17 +101,7 @@ class AddQuestion extends Component {
 AddQuestion.propTypes = {
   open: PropTypes.bool.isRequired,
   handleClose: PropTypes.func.isRequired,
-  actions: PropTypes.object.isRequired,
-  question: PropTypes.object.isRequired
+  dispatch: PropTypes.func.isRequired
 };
-
-const mapDispatchToProps = dispatch => {
-  return {
-    handleClose: question => {
-      dispatch(loadQuestion(question))
-    }
-  }
-}
-
   
   export default connect()(AddQuestion);
