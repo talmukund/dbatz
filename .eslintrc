@@ -13,7 +13,8 @@
     "sourceType": "module",
     "ecmaFeatures": {
       "jsx": true,
-      "modules": true
+      "modules": true,
+      "experimentalObjectRestSpread": true
     }
   },
   "env": {
@@ -22,6 +23,16 @@
     "node": true,
     "jquery": true,
     "mocha": true
+  },
+  "settings": {
+    "import/resolver": {
+      "node": {
+        "extensions": [
+          ".js",
+          ".jsx"
+        ]
+      }
+    }
   },
   "rules": {
     "quotes": 0,
