@@ -15,9 +15,11 @@
   "license": "MIT",
   "dependencies": {
     "babel-polyfill": "6.8.0",
+    "babel-preset-es2017": "^6.24.1",
     "bootstrap": "3.3.6",
     "jquery": "2.2.3",
     "material-ui": "^1.0.0-beta.23",
+    "mongoose": "^5.0.7",
     "prop-types": "^15.6.0",
     "react": "^15.6.2",
     "react-bootstrap": "^0.31.5",
@@ -26,7 +28,8 @@
     "react-router": "2.4.0",
     "react-router-redux": "4.0.4",
     "redux": "3.5.2",
-    "redux-thunk": "2.0.1",
+    "redux-promise": "^0.5.3",
+    "redux-thunk": "^2.0.1",
     "toastr": "2.1.2"
   },
   "devDependencies": {
@@ -44,8 +47,8 @@
     "cross-env": "1.0.7",
     "css-loader": "0.23.1",
     "enzyme": "2.2.0",
-    "eslint": "2.9.0",
-    "eslint-plugin-import": "1.6.1",
+    "eslint": "^2.13.1",
+    "eslint-plugin-import": "^1.6.1",
     "eslint-plugin-react": "5.0.1",
     "eslint-watch": "2.1.11",
     "eventsource-polyfill": "0.9.6",
